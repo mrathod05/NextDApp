@@ -43,13 +43,13 @@ const Navbar = () => {
             {!session ? (
               <>
                 <Link
-                  href="#"
+                  href="/auth-form"
                   className="text-gray-300 hover:text-yellow-300 transition-colors"
                 >
                   Login
                 </Link>
                 <Link
-                  href="#"
+                  href="/auth-form"
                   className="px-4 py-2 rounded-md bg-yellow-500 hover:bg-yellow-600 text-black font-medium transition-colors"
                 >
                   Sign Up

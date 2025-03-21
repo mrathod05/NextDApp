@@ -1,5 +1,14 @@
+import { Metadata } from "next";
+
+const APP_URL = "https://nextdapp.netlify.app/";
+const GIT_URL = "https://github.com/mrathod05/NextDApp";
+const CLI_PACKAGE_URL = "https://www.npmjs.com/package/use-next-dapp";
+
 export const siteMetadata = {
   name: "NextDApp",
+  app_url: APP_URL,
+  git_url: GIT_URL,
+  cli_package_url: CLI_PACKAGE_URL,
   description:
     "NextDApp is a modern Next.js 15 starter kit with built-in NextAuth v5 authentication, Phantom wallet integration, and optimized performance.",
   keywords: [
@@ -17,11 +26,10 @@ export const siteMetadata = {
   ],
   author: {
     name: "Meet Rathod",
-    url: "https://yourwebsite.com",
   },
   openGraph: {
-    url: "https://yourwebsite.com",
-    image: "/og-image.png",
+    url: APP_URL,
+    image: "/og.png",
     type: "website",
   },
   twitter: {
@@ -35,11 +43,11 @@ export const siteMetadata = {
   manifest: "/site.webmanifest",
 };
 
-export const META_DATA = {
+export const META_DATA: Metadata = {
   title: `${siteMetadata.name} – Next.js 15 + Auth + Phantom`,
   description: siteMetadata.description,
   keywords: siteMetadata.keywords,
-  authors: [{ name: siteMetadata.author.name, url: siteMetadata.author.url }],
+  authors: [{ name: siteMetadata.author.name }],
   creator: siteMetadata.author.name,
   openGraph: {
     title: `${siteMetadata.name} – Next.js 15 + Auth + Phantom`,
@@ -54,7 +62,7 @@ export const META_DATA = {
         alt: `${siteMetadata.name} - Next.js 15 + Auth + Phantom`,
       },
     ],
-    type: siteMetadata.openGraph.type,
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",

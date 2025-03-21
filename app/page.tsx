@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Code, Shield, Wallet } from "lucide-react";
+import { siteMetadata } from "@/lib/data";
 
 // Complete content object including footer
 const content = {
@@ -15,7 +16,7 @@ const content = {
     cta: {
       primary: {
         text: "Get Started",
-        link: "/auth-form",
+        link: siteMetadata.git_url,
       },
       secondary: {
         text: "Learn More",
@@ -59,12 +60,12 @@ const content = {
     ],
     cta: {
       text: "View Interactive Demo",
-      link: "/#",
+      link: siteMetadata.cli_package_url,
     },
     terminal: {
       commands: [
         {
-          command: "$ npx meet-next-dapp next-solana-app",
+          command: "$ npx use-next-dapp next-solana-app",
           color: "text-yellow-400",
         },
         {
@@ -139,12 +140,18 @@ export default function Home() {
               {content.hero.description}
             </p>
             <div className="mt-10 flex justify-center gap-x-6">
-              <Link
-                href={content.hero.cta.primary.link}
+              <button
+                onClick={() => {
+                  window.open(
+                    content.hero.cta.primary.link,
+                    "_blank",
+                    "noopener,noreferrer"
+                  );
+                }}
                 className="px-8 py-3 rounded-md bg-yellow-500 hover:bg-yellow-600 transition-colors text-lg font-medium text-black"
               >
                 {content.hero.cta.primary.text}
-              </Link>
+              </button>
               <Link
                 href={content.hero.cta.secondary.link}
                 className="px-8 py-3 rounded-md border border-yellow-900/30 hover:border-yellow-500/50 transition-colors text-lg font-medium"
@@ -225,13 +232,19 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-10">
-                <Link
-                  href={content.demo.cta.link}
+                <button
+                  onClick={() => {
+                    window.open(
+                      content.demo.cta.link,
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }}
                   className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-yellow-500 hover:bg-yellow-600 transition-colors"
                 >
                   {content.demo.cta.text}
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </button>
               </div>
             </div>
             <div className="mt-10 lg:mt-0 bg-black p-6 rounded-xl border border-yellow-900/30 shadow-xl">
