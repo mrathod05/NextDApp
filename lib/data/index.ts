@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-const APP_URL = "https://nextdapp.netlify.app";
+const APP_URL = "https://main--nextdapp.netlify.app";
 const GIT_URL = "https://github.com/mrathod05/NextDApp";
 const CLI_PACKAGE_URL = "https://www.npmjs.com/package/use-next-dapp";
 
