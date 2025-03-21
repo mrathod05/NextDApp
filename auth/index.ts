@@ -1,3 +1,4 @@
+import { siteMetadata } from "@/lib/data";
 import NextAuth from "next-auth";
 import { NextAuthConfig } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -33,7 +34,7 @@ export const authConfig: NextAuthConfig = {
         }
 
         try {
-          const res = await fetch(`http://localhost:3001/api/login`, {
+          const res = await fetch(`${siteMetadata.app_url}/api/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
